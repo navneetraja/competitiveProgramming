@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author navne
- *
- */
-package Arrays;

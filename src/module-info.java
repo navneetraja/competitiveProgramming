@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author navne
- *
- */
-module competiveProgramming {
-}
