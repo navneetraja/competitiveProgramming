@@ -1,36 +1,46 @@
 package Array;
+//189. Rotate Array
+//Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+//Example 1:
+//Input: nums = [1,2,3,4,5,6,7], k = 3
+//Output: [5,6,7,1,2,3,4]
+//Explanation:
+//rotate 1 steps to the right: [7,1,2,3,4,5,6]
+//rotate 2 steps to the right: [6,7,1,2,3,4,5]
+//rotate 3 steps to the right: [5,6,7,1,2,3,4]
+//Example 2:
+//Input: nums = [-1,-100,3,99], k = 2
+//Output: [3,99,-1,-100]
+//Explanation:
+//rotate 1 steps to the right: [99,-1,-100,3]
+//rotate 2 steps to the right: [3,99,-1,-100]
 
 import java.util.Arrays;
 
-//Input: nums = [1,2,3,4,5,6,7], k = 3
-//Output: [5,6,7,1,2,3,4]
 public class RotateArray {
+
     public static void main(String [] args){
+        int nums [] = {-1,-100,3,99};
+        int k=2;
+        rotate(0, nums.length-1,nums );
+        rotate(0,k-1,nums);
+        rotate(k, nums.length-1,nums );
 
-        int [] nums = {1,2,3,4,5,6,7};
-        int len = nums.length;
-        int[] rotatednums = new int[len];
-        int k=3;
-
-        for(int i=0;i<len;i++){
-
-
-            if((i+k)<len){
-                System.out.println(" f "+(i+k));
-                System.out.println(" fi "+i);
-                System.out.println(" fv "+(nums[i]));
-                nums[i+k] = nums[i];
-            } else {
-                System.out.println(" s "+(i+k));
-                System.out.println(" si "+i);
-                System.out.println(" sv "+(nums[i]));
-                nums[((i+k)-len)] = nums[i];
-            }
+        for(int i=0;i<nums.length;i++){
+            System.out.print(nums[i]+" ");
         }
 
-        Arrays.stream(nums).forEach(arr->{
-            System.out.print(" "+arr);
-        });
     }
 
+    public static void rotate(int i,int j, int [] nums){
+
+        while (i<j){
+            int  temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+            j--;
+        }
+    }
 }
+
