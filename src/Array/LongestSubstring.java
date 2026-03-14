@@ -32,6 +32,6 @@ public class LongestSubstring {
             set.add(s.charAt(right));
             maxLength = Math.max(maxLength,set.size());
         }
-        System.out.println(maxLength);
+        System.out.println("longest string length : "+maxLength);
     }
 }
